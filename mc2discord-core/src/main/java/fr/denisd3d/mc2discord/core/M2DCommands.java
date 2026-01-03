@@ -143,7 +143,6 @@ public class M2DCommands {
         }
     }
 
-
     public static String addLinkedPlayers(UUID target_uuid, long discord_id) {
         if (Mc2Discord.INSTANCE.linkedPlayerList.contains(target_uuid))
             return null;

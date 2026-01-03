@@ -3,6 +3,7 @@ package fr.denisd3d.mc2discord.core;
 import discord4j.common.util.Snowflake;
 import fr.denisd3d.mc2discord.core.entities.GlobalEntity;
 import reactor.util.annotation.Nullable;
+import net.minecraft.server.permissions.PermissionSet;
 
 import java.util.HashMap;
 import java.util.List;
