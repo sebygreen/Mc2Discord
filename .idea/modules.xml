@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Mc2Discord.iml" filepath="$PROJECT_DIR$/.idea/Mc2Discord.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/mc2discord-1.21.11.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/mc2discord-1.21.11.common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/mc2discord-1.21.11.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/mc2discord-1.21.11.common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/mc2discord-1.21.11.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/mc2discord-1.21.11.fabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/mc2discord-1.21.11.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/mc2discord-1.21.11.fabric.test.iml" />
+    </modules>
+  </component>
+</project>
