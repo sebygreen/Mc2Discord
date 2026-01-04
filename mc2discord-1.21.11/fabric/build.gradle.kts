@@ -20,7 +20,6 @@ dependencies {
     mappings(loom.officialMojangMappings())
     modImplementation("net.fabricmc:fabric-loader:${rootProject.extra["fabricLoaderVersion"]}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${rootProject.extra["fabricVersion"]}")
-
     shadow(project(":common"))
     shadow(project(":mc2discord-core"))
 }

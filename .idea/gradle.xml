@@ -16,7 +16,7 @@
           </compositeBuild>
         </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/mc2discord-1.21.11" />
-        <option name="gradleJvm" value="corretto-22" />
+        <option name="gradleJvm" value="ms-21" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/mc2discord-1.21.11" />

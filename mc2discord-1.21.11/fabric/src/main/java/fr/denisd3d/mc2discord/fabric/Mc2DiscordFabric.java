@@ -5,7 +5,6 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 
-
 public class Mc2DiscordFabric implements ModInitializer {
     @Override
     public void onInitialize() {

@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm&quot;: &quot;WSL&quot;,
-    &quot;credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm&quot;: &quot;WSL&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;24.12.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;24.10.4&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;wsl://Ubuntu@/home/sebastiengreen/.nvm/versions/node/v24.12.0/bin/node&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.runtime&quot;
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="947627b8-49ea-4b2f-9707-1cf032fbb7d8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/fabric/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/fabric/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/fabric/src/main/java/fr/denisd3d/mc2discord/fabric/Mc2DiscordFabric.java" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/fabric/src/main/java/fr/denisd3d/mc2discord/fabric/Mc2DiscordFabric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/gradle.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "sebygreen"
   }
-}</component>
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/sebygreen/Mc2Discord.git",
+    "accountId": "603c977a-8d5d-4d72-8482-4a9687108998"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="37mwzfLLsvNyEb5N2iWGlUiolEt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "WSL",
+    "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "WSL",
+    "git-widget-placeholder": "1.21.11",
+    "javascript.nodejs.core.library.configured.version": "24.12.0",
+    "javascript.nodejs.core.library.typings.version": "24.10.4",
+    "javascript.preferred.runtime.type.id": "node",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/sebastiengreen/Developer/Mc2Discord",
+    "nodejs_interpreter_path": "wsl://Ubuntu@/home/sebastiengreen/.nvm/versions/node/v24.12.0/bin/node",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="947627b8-49ea-4b2f-9707-1cf032fbb7d8" name="Changes" comment="" />
+      <created>1767521818441</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1767521818441</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
 </project>

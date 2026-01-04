@@ -10,10 +10,5 @@
         <module name="mc2discord-1.21.11.forge.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="mc2discord-core" target="22" />
-      <module name="mc2discord-core.main" target="22" />
-      <module name="mc2discord-core.test" target="22" />
-    </bytecodeTargetLevel>
   </component>
 </project>
