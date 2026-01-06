@@ -3,7 +3,6 @@ package fr.denisd3d.mc2discord.core;
 import discord4j.common.util.Snowflake;
 import fr.denisd3d.mc2discord.core.entities.GlobalEntity;
 import reactor.util.annotation.Nullable;
-import net.minecraft.server.permissions.PermissionSet;
 
 import java.util.HashMap;
 import java.util.List;
@@ -40,7 +39,7 @@ public interface IMinecraft {
     /**
      * Execute a command in the minecraft server
      * @param command The command to execute
-     * @param permissionLevel The permission level granted, if < of the command permission level, the command will not be executed
+     * @param permissionLevel The permission level granted, if smaller of the command permission level, the command will not be executed
      * @param channelId The channel id where the command was executed to send the response
      */
     void executeCommand(String command, int permissionLevel, Snowflake channelId);

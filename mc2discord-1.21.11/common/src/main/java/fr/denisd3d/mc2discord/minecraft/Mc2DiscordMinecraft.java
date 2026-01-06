@@ -52,7 +52,7 @@ public class Mc2DiscordMinecraft {
                 Vec3.ZERO,
                 Vec2.ZERO,
                 minecraftServer.overworld(),
-                PermissionSet.ALL_PERMISSIONS,
+                PermissionSet.NO_PERMISSIONS,
                 "Discord",
                 Component.literal("Discord"),
                 minecraftServer,

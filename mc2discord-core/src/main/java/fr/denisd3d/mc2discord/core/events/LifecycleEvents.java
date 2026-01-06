@@ -29,14 +29,11 @@ public class LifecycleEvents {
 
     public static void onDiscordReady(ReadyEvent readyEvent) {
         Mc2Discord.INSTANCE.vars.bot_name = readyEvent.getSelf().getUsername();
-        Mc2Discord.INSTANCE.vars.bot_discriminator = readyEvent.getSelf().getDiscriminator();
+        //Mc2Discord.INSTANCE.vars.bot_discriminator = readyEvent.getSelf().getDiscriminator();
         Mc2Discord.INSTANCE.vars.bot_id = readyEvent.getSelf().getId();
-
-        Mc2Discord.INSTANCE.vars.mc2discord_display_name = Mc2Discord.INSTANCE.config.style.bot_name.isEmpty() ? readyEvent.getSelf()
-                .getUsername() : Entity.replace(Mc2Discord.INSTANCE.config.style.bot_name);
-        Mc2Discord.INSTANCE.vars.mc2discord_avatar = Mc2Discord.INSTANCE.config.style.bot_avatar.isEmpty() ? readyEvent.getSelf()
-                .getAvatarUrl() : Entity.replace(Mc2Discord.INSTANCE.config.style.bot_avatar);
-        Mc2Discord.INSTANCE.vars.mc2discord_webhook_name = "Mc2Dis Webhook - " + Mc2Discord.INSTANCE.vars.bot_name + "#" + Mc2Discord.INSTANCE.vars.bot_discriminator;
+        Mc2Discord.INSTANCE.vars.mc2discord_display_name = Mc2Discord.INSTANCE.config.style.bot_name.isEmpty() ? readyEvent.getSelf().getUsername() : Entity.replace(Mc2Discord.INSTANCE.config.style.bot_name);
+        Mc2Discord.INSTANCE.vars.mc2discord_avatar = Mc2Discord.INSTANCE.config.style.bot_avatar.isEmpty() ? readyEvent.getSelf().getAvatarUrl() : Entity.replace(Mc2Discord.INSTANCE.config.style.bot_avatar);
+        Mc2Discord.INSTANCE.vars.mc2discord_webhook_name = "Mc2Dis Webhook - " + Mc2Discord.INSTANCE.vars.bot_name; // + "#" + Mc2Discord.INSTANCE.vars.bot_discriminator
 
         for (Channels.Channel channel : Mc2Discord.INSTANCE.config.channels.channels) {
             if (channel.channel_id.equals(M2DUtils.NIL_SNOWFLAKE)) {
@@ -148,10 +145,10 @@ public class LifecycleEvents {
         LoggingManager.init();
         AccountManager.init();
 
-        Mc2Discord.LOGGER.info("Mc2Discord started as " + Mc2Discord.INSTANCE.vars.bot_name + "#" + Mc2Discord.INSTANCE.vars.bot_discriminator);
+        Mc2Discord.LOGGER.info("Mc2Discord started as {}", Mc2Discord.INSTANCE.vars.bot_name); //, Mc2Discord.INSTANCE.vars.bot_discriminator
         String newVersion = Mc2Discord.INSTANCE.minecraft.getNewVersion();
         if (newVersion != null) {
-            Mc2Discord.LOGGER.info("New Mc2Discord version available: " + newVersion);
+            Mc2Discord.LOGGER.info("New Mc2Discord version available: {}", newVersion);
         }
         for (String error : Mc2Discord.INSTANCE.errors) {
             Mc2Discord.LOGGER.warn(error);

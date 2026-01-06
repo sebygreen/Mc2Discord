@@ -26,7 +26,7 @@ public class M2DCommands {
         if (M2DUtils.isNotConfigured()) {
             result.add(Mc2Discord.INSTANCE.langManager.translate("commands.status.invalid_config"));
         } else {
-            result.add(Mc2Discord.INSTANCE.langManager.translate("commands.status.bot_name", Mc2Discord.INSTANCE.vars.bot_name, Mc2Discord.INSTANCE.vars.bot_discriminator));
+            result.add(Mc2Discord.INSTANCE.langManager.translate("commands.status.bot_name", Mc2Discord.INSTANCE.vars.bot_name)); //, Mc2Discord.INSTANCE.vars.bot_discriminator
             result.add(Mc2Discord.INSTANCE.langManager.translate("commands.status.bot_id", Mc2Discord.INSTANCE.vars.bot_id.asString()));
             result.add(Mc2Discord.INSTANCE.langManager.translate("commands.status.state", Mc2Discord.INSTANCE.client.getGatewayClient(0).flatMap(gatewayClient -> gatewayClient.isConnected().blockOptional()).map(connected -> connected ? "Connected" : "Disconnected").orElse("Disconnected")));
             for (int shard_id = 0; shard_id < Mc2Discord.INSTANCE.client.getGatewayClientGroup().getShardCount(); shard_id++) {
@@ -41,7 +41,7 @@ public class M2DCommands {
             result.add(Mc2Discord.INSTANCE.langManager.translate("commands.status.version", newVersion));
         }
 
-        if (Mc2Discord.INSTANCE.errors.size() != 0) {
+        if (!Mc2Discord.INSTANCE.errors.isEmpty()) {
             result.add(Mc2Discord.INSTANCE.langManager.translate("commands.status.errors"));
             result.addAll(Mc2Discord.INSTANCE.errors);
         } else {

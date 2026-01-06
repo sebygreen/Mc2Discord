@@ -2,6 +2,7 @@ package fr.denisd3d.mc2discord.core;
 
 import discord4j.common.util.Snowflake;
 import discord4j.core.object.entity.Webhook;
+import discord4j.core.object.entity.channel.GuildMessageChannel;
 import discord4j.core.object.entity.channel.MessageChannel;
 import discord4j.core.object.entity.channel.TopLevelGuildMessageChannel;
 import discord4j.core.spec.EmbedCreateSpec;
@@ -66,7 +67,6 @@ public class MessageManager {
         if (message.isEmpty())
             return Mono.empty();
 
-
         return Flux.fromIterable(getMatchingChannels(types, forced_channel))
                 .flatMap(channel -> {
                     String message_with_mention = M2DUtils.transformToMention(message, channel.channel_id);
@@ -105,7 +105,6 @@ public class MessageManager {
     public static Mono<Void> createWebhookMessage(Snowflake channel, String message, Possible<String> username, Possible<String> avatarUrl, boolean surroundWithCodeBlock, Collection<? extends EmbedCreateSpec> embeds, Collection<? extends MessageCreateFields.File> files) {
         if (username.isAbsent() && avatarUrl.isAbsent())
             return createPlainTextMessage(channel, message, username, surroundWithCodeBlock); // If username and avatar is absent, fallback to plain text for bot account to be used instead of a webhook with same name (allow color)
-
 
         return getMc2DiscordWebhook(channel)
                 .flatMapMany(webhook -> Flux.fromIterable(M2DUtils.breakStringInMessages(message, 2000, surroundWithCodeBlock))
@@ -208,29 +207,23 @@ public class MessageManager {
      */
     public static Mono<Void> createEmbedMessage(Snowflake channel, String message, Possible<String> username, Possible<String> avatarUrl, List<String> types, Collection<? extends EmbedCreateSpec> embeds, Collection<? extends MessageCreateFields.File> files) {
         return Mc2Discord.INSTANCE.client.getChannelById(channel)
-                .ofType(MessageChannel.class)
-                .switchIfEmpty(Mono.fromRunnable(() -> Mc2Discord.LOGGER.error("Invalid channel type, channel {} must support text messages", channel)))
-                .flatMapMany(messageChannel ->
-                        Flux.fromIterable(M2DUtils.breakStringInMessages(message, 4096, false))
-                                .flatMap(s -> {
-                                    MessageCreateSpec.Builder mbuilder = MessageCreateSpec.builder();
-                                    EmbedCreateSpec.Builder ebuilder = EmbedCreateSpec.builder().description(s);
-
-                                    ebuilder.color(M2DUtils.getColorFromString(types.stream().map(type -> Mc2Discord.INSTANCE.config.style.embed_colors.<String>get(type)).filter(Objects::nonNull).findFirst().orElse("SUMMER_SKY")));
-
-                                    if (!username.toOptional().orElse(Mc2Discord.INSTANCE.vars.mc2discord_display_name).equals(Mc2Discord.INSTANCE.vars.mc2discord_display_name) || Mc2Discord.INSTANCE.config.style.embed_show_bot_avatar) {
-                                        ebuilder.author(username.toOptional().orElse(Mc2Discord.INSTANCE.vars.mc2discord_display_name), null, avatarUrl.toOptional().orElse(Mc2Discord.INSTANCE.vars.mc2discord_avatar));
-                                    }
-
-                                    mbuilder.addEmbed(ebuilder.build());
-
-                                    if (embeds != null)
-                                        mbuilder.addAllEmbeds(embeds);
-                                    if (files != null)
-                                        mbuilder.files(files);
-
-                                    return messageChannel.createMessage(mbuilder.build());
-                                }))
-                .then();
+            .ofType(GuildMessageChannel.class)
+            .switchIfEmpty(Mono.fromRunnable(() -> Mc2Discord.LOGGER.error("Invalid channel type, channel {} must support text messages", channel)))
+            .flatMapMany(messageChannel ->
+                Flux.fromIterable(M2DUtils.breakStringInMessages(message, 4096, false))
+                    .flatMap(s -> {
+                        MessageCreateSpec.Builder mbuilder = MessageCreateSpec.builder();
+                        EmbedCreateSpec.Builder ebuilder = EmbedCreateSpec.builder().description(s);
+                        ebuilder.color(M2DUtils.getColorFromString(types.stream().map(type -> Mc2Discord.INSTANCE.config.style.embed_colors.<String>get(type)).filter(Objects::nonNull).findFirst().orElse("SUMMER_SKY")));
+                        if (!username.toOptional().orElse(Mc2Discord.INSTANCE.vars.mc2discord_display_name).equals(Mc2Discord.INSTANCE.vars.mc2discord_display_name) || Mc2Discord.INSTANCE.config.style.embed_show_bot_avatar) {
+                            ebuilder.author(username.toOptional().orElse(Mc2Discord.INSTANCE.vars.mc2discord_display_name), null, avatarUrl.toOptional().orElse(Mc2Discord.INSTANCE.vars.mc2discord_avatar));
+                        }
+                        mbuilder.addEmbed(ebuilder.build());
+                        if (embeds != null) mbuilder.addAllEmbeds(embeds);
+                        if (files != null) mbuilder.files(files);
+                        return messageChannel.createMessage(mbuilder.build());
+                    })
+            )
+            .then();
     }
 }

@@ -1,10 +1,10 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        maven {
+        /*maven {
             name = 'Forge'
             url = 'https://maven.minecraftforge.net/'
-        }
+        }*/
         maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
@@ -17,7 +17,7 @@ pluginManagement {
 }
 
 plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version("0.8.0")
+    id("org.gradle.toolchains.foojay-resolver-convention") version("1.0.0")
 }
 
 // This should match the folder name of the project, or else IDEA may complain (see https://youtrack.jetbrains.com/issue/IDEA-317606)
@@ -27,4 +27,4 @@ project(":mc2discord-core").projectDir = file("../mc2discord-core")
 
 include("common")
 include("fabric")
-include("forge")
+//include("forge")

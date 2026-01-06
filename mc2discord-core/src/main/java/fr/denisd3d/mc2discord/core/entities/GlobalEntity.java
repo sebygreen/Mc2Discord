@@ -39,7 +39,7 @@ public class GlobalEntity extends Entity {
         replacements.put("now", String.valueOf(System.currentTimeMillis()));
         replacements.put("uptime", String.valueOf(System.currentTimeMillis() - Vars.startTime));
         replacements.put("bot_name", Mc2Discord.INSTANCE.vars.bot_name);
-        replacements.put("bot_discriminator", Mc2Discord.INSTANCE.vars.bot_discriminator);
+        //replacements.put("bot_discriminator", Mc2Discord.INSTANCE.vars.bot_discriminator);
         replacements.put("bot_id", Mc2Discord.INSTANCE.vars.bot_id.asString());
         replacements.put("bot_display_name", Mc2Discord.INSTANCE.vars.mc2discord_display_name);
         replacements.put("bot_avatar_url", Mc2Discord.INSTANCE.vars.mc2discord_avatar);

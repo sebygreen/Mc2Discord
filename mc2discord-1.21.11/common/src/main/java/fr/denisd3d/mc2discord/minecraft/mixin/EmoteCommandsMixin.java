@@ -25,9 +25,7 @@ public class EmoteCommandsMixin {
     @Inject(method = {"lambda$register$0", "method_43645"}, at = @At("HEAD"))
     private static void execute(CommandContext<CommandSourceStack> commandContext, PlayerChatMessage message, CallbackInfo ci) {
         if (M2DUtils.isNotConfigured()) return;
-
         if (!Mc2Discord.INSTANCE.config.misc.broadcast_commands.contains("me")) return;
-
         ServerPlayer serverPlayer = commandContext.getSource().getPlayer();
         String messageContent = ChatType.bind(ChatType.SAY_COMMAND, commandContext.getSource()).decorate(message.decoratedContent()).getString();
         if (serverPlayer != null) {

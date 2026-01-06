@@ -110,7 +110,7 @@ public class MinecraftImpl implements IMinecraft {
         response.append("Available commands:\n").append(prefix).append("help\n");
 
         if (permissionLevel >= 0) {
-            Map<CommandNode<CommandSourceStack>, String> map = commandDispatcher.getSmartUsage(commandDispatcher.getRoot(), Mc2DiscordMinecraft.commandSource.withPermission(permissionLevel));
+            Map<CommandNode<CommandSourceStack>, String> map = commandDispatcher.getSmartUsage(commandDispatcher.getRoot(), Mc2DiscordMinecraft.commandSource.withPermission(PermissionSet.NO_PERMISSIONS));
 
             for (String string : map.values()) {
                 response.append(prefix).append(string).append("\n");
@@ -140,7 +140,7 @@ public class MinecraftImpl implements IMinecraft {
     @Override
     public void executeCommand(String command, int permissionLevel, Snowflake channelId) {
         DiscordCommandSource.channelId = channelId;
-        Mc2DiscordMinecraft.server.getCommands().performPrefixedCommand(Mc2DiscordMinecraft.commandSource.withPermission(permissionLevel), command);
+        Mc2DiscordMinecraft.server.getCommands().performPrefixedCommand(Mc2DiscordMinecraft.commandSource.withPermission(PermissionSet.NO_PERMISSIONS), command);
     }
 
     @Override

@@ -10,14 +10,13 @@ repositories {
 
 dependencies {
     // Discord4J
-    api(group = "com.discord4j", name = "discord4j-core", version = "3.3.0-RC1")
+    api(group = "com.discord4j", name = "discord4j-core", version = "3.3.0")
 
     // Config
     implementation(group = "com.github.denisd3d", name = "config4j", version = "1.1.6")
-    implementation(group = "com.electronwill.night-config", name = "toml", version = "3.6.6")
+    implementation(group = "com.electronwill.night-config", name = "toml", version = "3.8.3")
 
     // Messages
-    @Suppress("VulnerableDependency")
     implementation(group = "com.vdurmont", name = "emoji-java", version = "5.1.1")
 
     // Account

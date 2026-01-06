@@ -13,8 +13,8 @@ plugins {
     id("net.fabricmc.fabric-loom-remap") version ("1.14.10") apply (false)
 
     // Forge
-    id("net.minecraftforge.gradle") version ("[6.0.24,6.2)") apply (false)
-    id("org.spongepowered.mixin") version ("0.7+") apply (false)
+    //id("net.minecraftforge.gradle") version ("[6.0.24,6.2)") apply (false)
+    //id("org.spongepowered.mixin") version ("0.7+") apply (false)
 }
 
 val sharedProperties = readProperties(file("../shared.properties"))
@@ -35,28 +35,22 @@ subprojects {
 
     tasks.jar {
         manifest {
-            attributes(
-                "Specification-Title" to sharedProperties["modName"],
-                "Specification-Vendor" to sharedProperties["modAuthors"],
-                "Specification-Version" to modVersion,
-                "Implementation-Title" to sharedProperties["modName"],
-                "Implementation-Vendor" to sharedProperties["modAuthors"],
-                "Implementation-Version" to modVersion,
-                "Implementation-Timestamp" to SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").format(Date()),
-                "Timestamp" to System.currentTimeMillis(),
-                "Built-On-Java" to "${System.getProperty("java.vm.version")} (${System.getProperty("java.vm.vendor")})",
-                "Build-On-Minecraft" to rootProject.extra["minecraftVersion"],
-            )
+            attributes["Specification-Title"] = sharedProperties["modName"]
+            attributes["Specification-Vendor"] = sharedProperties["modAuthors"]
+            attributes["Specification-Version"] = modVersion
+            attributes["Implementation-Title"] = sharedProperties["modName"]
+            attributes["Implementation-Vendor"] = sharedProperties["modAuthors"]
+            attributes["Implementation-Version"] = modVersion
+            attributes["Implementation-Timestamp"] = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").format(Date())
+            attributes["Timestamp"] = System.currentTimeMillis()
+            attributes["Built-On-Java"] = "${System.getProperty("java.vm.version")} (${System.getProperty("java.vm.vendor")})"
+            attributes["Build-On-Minecraft"] = rootProject.extra["minecraftVersion"]
         }
     }
 
     tasks.processResources {
-        filesMatching(listOf("pack.mcmeta", "fabric.mod.json", "META-INF/mods.toml", "*.mixins.json")) {
-            expand(
-                rootProject.properties +
-                        sharedProperties.map { it.key.toString() to it.value }.toMap() +
-                        mapOf("modVersion" to modVersion)
-            )
+        filesMatching(listOf("pack.mcmeta", "fabric.mod.json", "*.mixins.json")) { // "META-INF/mods.toml"
+            expand(rootProject.properties + sharedProperties.map { it.key.toString() to it.value }.toMap() + mapOf("modVersion" to modVersion))
         }
     }
 }

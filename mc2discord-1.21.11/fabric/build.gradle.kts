@@ -1,7 +1,9 @@
 plugins {
-    id("fabric-loom")
-    id("com.github.johnrengelman.shadow")
+    id("net.fabricmc.fabric-loom-remap")
+    id("com.gradleup.shadow")
 }
+
+project.gradle.startParameter.excludedTaskNames.add("test")
 
 val sharedProperties = readProperties(file("../../shared.properties"))
 
@@ -24,11 +26,24 @@ dependencies {
     shadow(project(":mc2discord-core"))
 }
 
+java {
+	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+	// if it is present.
+	// If you remove this line, sources will not be generated.
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_24
+	targetCompatibility = JavaVersion.VERSION_24
+}
+
 loom {
     accessWidenerPath.set(project(":common").file("src/main/resources/${sharedProperties["modId"]}.accesswidener"))
+    // When set only server related features and jars will be setup.
+	serverOnlyMinecraftJar()
 
     @Suppress("UnstableApiUsage")
     mixin {
+        useLegacyMixinAp.set(true)
         defaultRefmapName.set("${sharedProperties["modId"]}.refmap.json")
     }
 

@@ -67,7 +67,6 @@ public class M2DUtils {
         int lineLen = 0;
         while (tok.hasMoreTokens()) {
             String word = tok.nextToken();
-
             if (lineLen + word.length() >= maxLineLength) {
                 if (surroundWithCodeBlock) {
                     output.insert(0, "```");

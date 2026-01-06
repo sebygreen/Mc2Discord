@@ -96,7 +96,7 @@ public class DiscordEvent {
         Optional<MemberEntity> referencedMemberEntity = event.getMessage().getMessageReference().flatMap(MessageReference::getMessageId).flatMap(snowflake -> Optional.of(Mono.defer(() -> event.getMessage().getChannel().flatMap(channel -> channel.getMessageById(snowflake))))).flatMap(message -> Optional.ofNullable(message.block())).flatMap(message -> Optional.ofNullable(message.getAuthorAsMember().block())).flatMap(referenced_member -> Optional.of(new MemberEntity(referenced_member.getGlobalName().orElse(referenced_member.getUsername()), referenced_member.getUsername(), referenced_member.getNickname().orElse(""), referenced_member.getAvatarUrl(), M2DUtils.getMemberColor(referenced_member).blockOptional().orElseThrow())));
         Optional<String> referencedContent = referencedMemberEntity.flatMap(entity -> Optional.of(Entity.replace(Mc2Discord.INSTANCE.config.style.reply_format, Collections.singletonList(entity))));
 
-        Mc2Discord.INSTANCE.minecraft.sendMessage(content, attachments, referencedContent.orElse(null), "0".equals(member.getDiscriminator()) ? member.getUsername() : null);
+        Mc2Discord.INSTANCE.minecraft.sendMessage(content, attachments, referencedContent.orElse(null), member.getUsername()); //"0".equals(member.getDiscriminator()) ? member.getUsername() : null
     }
 
     public static void onMemberJoin(MemberJoinEvent memberJoinEvent) {
