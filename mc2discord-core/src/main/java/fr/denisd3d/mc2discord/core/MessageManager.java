@@ -212,6 +212,7 @@ public class MessageManager {
             .flatMapMany(messageChannel ->
                 Flux.fromIterable(M2DUtils.breakStringInMessages(message, 4096, false))
                     .flatMap(s -> {
+                        System.out.print(s);
                         MessageCreateSpec.Builder mbuilder = MessageCreateSpec.builder();
                         EmbedCreateSpec.Builder ebuilder = EmbedCreateSpec.builder().description(s);
                         ebuilder.color(M2DUtils.getColorFromString(types.stream().map(type -> Mc2Discord.INSTANCE.config.style.embed_colors.<String>get(type)).filter(Objects::nonNull).findFirst().orElse("SUMMER_SKY")));
