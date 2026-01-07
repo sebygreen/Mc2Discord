@@ -14,7 +14,7 @@ dependencies {
 
     // Config
     implementation(group = "com.github.denisd3d", name = "config4j", version = "1.1.6")
-    implementation(group = "com.electronwill.night-config", name = "toml", version = "3.8.3")
+    implementation(group = "com.electronwill.night-config", name = "toml", version = "3.6.6")
 
     // Messages
     implementation(group = "com.vdurmont", name = "emoji-java", version = "5.1.1")
