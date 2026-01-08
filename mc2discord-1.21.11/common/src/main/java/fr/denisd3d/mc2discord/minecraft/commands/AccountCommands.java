@@ -55,7 +55,6 @@ public class AccountCommands {
                         })));
     }
 
-
     public static Component getLinkTextComponent(String code) {
         Map<String, MutableComponent> replacements = new HashMap<>();
         replacements.put("command", Component.literal("!code " + code)

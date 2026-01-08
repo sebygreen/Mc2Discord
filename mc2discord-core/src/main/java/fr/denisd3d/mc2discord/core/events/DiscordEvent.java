@@ -72,15 +72,16 @@ public class DiscordEvent {
 
         String command = event.getMessage().getContent().substring(Mc2Discord.INSTANCE.config.commands.prefix.length());
 
+
+
         if (command.equals("help")) { // Help command
             String result = Mc2Discord.INSTANCE.minecraft.executeHelpCommand(permission_level, commands);
             MessageManager.sendMessage(Collections.singletonList("command"), result, MessageManager.default_username, MessageManager.default_avatar, event.getMessage().getChannelId(), Mc2Discord.INSTANCE.config.commands.use_codeblocks).subscribe();
         } else if (commands.stream().anyMatch(command::startsWith)) { // Command listed as allowed
-            Mc2Discord.INSTANCE.minecraft.executeCommand(command, Integer.MAX_VALUE, event.getMessage().getChannelId());
+            Mc2Discord.INSTANCE.minecraft.executeCommand(command, 1, event.getMessage().getChannelId());
         } else {
             Mc2Discord.INSTANCE.minecraft.executeCommand(command, permission_level, event.getMessage().getChannelId());
         }
-
     }
 
     private static void processMessage(MessageCreateEvent event, Member member) {

@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="947627b8-49ea-4b2f-9707-1cf032fbb7d8" name="Changes" comment="">
+    <list default="true" id="947627b8-49ea-4b2f-9707-1cf032fbb7d8" name="Changes" comment="(feat) functional fabric build, java 21">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/common/mc2discord-1.21.11.common.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/common/mc2discord-1.21.11.common.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/fabric/mc2discord-1.21.11.fabric.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/fabric/mc2discord-1.21.11.fabric.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/fabric/mc2discord-1.21.11.fabric.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/fabric/mc2discord-1.21.11.fabric.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mc2discord-core/src/main/java/fr/denisd3d/mc2discord/core/MessageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-core/src/main/java/fr/denisd3d/mc2discord/core/MessageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/common/src/main/java/fr/denisd3d/mc2discord/minecraft/Mc2DiscordMinecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/common/src/main/java/fr/denisd3d/mc2discord/minecraft/Mc2DiscordMinecraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/common/src/main/java/fr/denisd3d/mc2discord/minecraft/MinecraftImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/common/src/main/java/fr/denisd3d/mc2discord/minecraft/MinecraftImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/common/src/main/java/fr/denisd3d/mc2discord/minecraft/commands/AccountCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/common/src/main/java/fr/denisd3d/mc2discord/minecraft/commands/AccountCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/common/src/main/resources/mc2discord.mixins.json" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/common/src/main/resources/mc2discord.mixins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/fabric/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/fabric/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/fabric/src/main/resources/mc2discord.fabric.mixins.json" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/fabric/src/main/resources/mc2discord.fabric.mixins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-1.21.11/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-1.21.11/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-core/src/main/java/fr/denisd3d/mc2discord/core/events/DiscordEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-core/src/main/java/fr/denisd3d/mc2discord/core/events/DiscordEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mc2discord-core/src/main/resources/assets/mc2discord/m2d-lang/core/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/mc2discord-core/src/main/resources/assets/mc2discord/m2d-lang/core/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +51,7 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="mc2discord-1.21.11" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="fabric" type="c8890929:TasksNode$1" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -69,7 +75,7 @@
     &quot;accountId&quot;: &quot;603c977a-8d5d-4d72-8482-4a9687108998&quot;
   }
 }</component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$/mc2discord-1.21.11" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-9.2.1-bin/2t0n5ozlw9xmuyvbp7dnzaxug/gradle-9.2.1" javaHome="$USER_HOME$/Library/Java/JavaVirtualMachines/ms-21.0.9/Contents/Home" gradleVersion="9.2.1" />
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$/mc2discord-1.21.11" gradleHome="C:\Users\sebastiengreen\.gradle\wrapper\dists\gradle-9.2.1-bin\2t0n5ozlw9xmuyvbp7dnzaxug\gradle-9.2.1" javaHome="C:\Users\sebastiengreen\AppData\Local\Programs\Eclipse Adoptium\jdk-21.0.6.7-hotspot" gradleVersion="9.2.1" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -82,25 +88,52 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.mc2discord-1.21.11 [build].executor": "Run",
     "Gradle.mc2discord-1.21.11 [runFabricServer].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "WSL",
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "WSL",
     "git-widget-placeholder": "1.21.11",
+    "ignore.virus.scanning.warn.message": "true",
     "javascript.nodejs.core.library.configured.version": "24.12.0",
     "javascript.nodejs.core.library.typings.version": "24.10.4",
     "javascript.preferred.runtime.type.id": "node",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/sebastiengreen/Developer/Mc2Discord",
+    "last_opened_file_path": "C:/Users/sebastiengreen/Developer/Mc2Discord",
     "nodejs_interpreter_path": "wsl://Ubuntu@/home/sebastiengreen/.nvm/versions/node/v24.12.0/bin/node",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.mc2discord-1.21.11 [build]">
+    <configuration name="mc2discord-1.21.11 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mc2discord-1.21.11" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <configuration name="mc2discord-1.21.11 [runFabricServer]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -128,6 +161,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.mc2discord-1.21.11 [build]" />
         <item itemvalue="Gradle.mc2discord-1.21.11 [runFabricServer]" />
       </list>
     </recent_temporary>
@@ -148,6 +182,10 @@
       <updated>1767521818441</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="(feat) functional fabric build, java 21" />
+    <option name="LAST_COMMIT_MESSAGE" value="(feat) functional fabric build, java 21" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
